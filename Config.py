@@ -1,3 +1,4 @@
+import os
 from os import getenv
 
 from dotenv import load_dotenv
@@ -18,5 +19,5 @@ API_ID = getenv("API_ID")
 API_HASH = getenv("API_HASH")
 BIO_MESSAGE = getenv("BIO")
 PING_MESSAGE = getenv("PING_MESSAGE")
-HANDLER = getenv("HANDLER")
+HANDLER = os.environ.get("HANDLER", r"\.")
 SUDO = list(map(int, getenv("SUDO").split()))
