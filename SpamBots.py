@@ -31,6 +31,7 @@ from Config import (
     STRING_10,
     SUDO,
 )
+from Config import PING_MESSAGE as PM
 from Utils import RAID, RRAID
 
 a = API_ID
@@ -727,7 +728,7 @@ async def ping(e):
         event = await e.reply(text, parse_mode=None, link_preview=None)
         end = datetime.now()
         ms = (end - start).microseconds / 1000
-        await event.edit(f"🤖 𝗣𝗼𝗻𝗴!\n`{ms}` 𝗺𝘀\n 𝗦𝗣𝗔𝗠𝗕𝗢𝗧 𝗢𝗡 𝗙𝗜𝗥𝗘 🔥")
+        await event.edit(f"🤖 𝗣𝗼𝗻𝗴!\n`{ms}` 𝗺𝘀\n {PM} ")
 
 
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.restart"))
