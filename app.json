@@ -71,6 +71,11 @@
         "description": "Sudo Users Id",
         "value": "",
         "required": true
+      },
+        "PING_MSG": {
+        "description": "Sudo Users Id",
+        "value": "",
+        "required": true
       }
   },
   "addons": [{
