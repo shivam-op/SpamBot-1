@@ -76,6 +76,11 @@
         "description": "A custom message for ping",
         "value": "",
         "required": true
+      },
+        "HANDLER": {
+        "description": "command Handler",
+        "value": ".",
+        "required": true
       }
   },
   "addons": [{
