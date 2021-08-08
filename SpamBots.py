@@ -722,7 +722,7 @@ async def _(e):
 @cdk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
 @edk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
 @ddk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
-async def ping(e):async def ping(e):
+async def ping(e):
     if e.sender_id in SMEX_USERS:
         start = datetime.now()
         text = "Pong!"
