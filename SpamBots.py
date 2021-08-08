@@ -32,6 +32,7 @@ from Config import (
     SUDO,
 )
 from Config import PING_MESSAGE as PM
+from Config import HANDLER as HD
 from Utils import RAID, RRAID
 
 a = API_ID
@@ -711,17 +712,17 @@ async def _(e):
             await e.reply(usage, parse_mode=None, link_preview=None)
 
 
-@idk.on(events.NewMessage(incoming=True, pattern=r"\.ping"))
-@ydk.on(events.NewMessage(incoming=True, pattern=r"\.ping"))
-@wdk.on(events.NewMessage(incoming=True, pattern=r"\.ping"))
-@hdk.on(events.NewMessage(incoming=True, pattern=r"\.ping"))
-@sdk.on(events.NewMessage(incoming=True, pattern=r"\.ping"))
-@adk.on(events.NewMessage(incoming=True, pattern=r"\.ping"))
-@bdk.on(events.NewMessage(incoming=True, pattern=r"\.ping"))
-@cdk.on(events.NewMessage(incoming=True, pattern=r"\.ping"))
-@edk.on(events.NewMessage(incoming=True, pattern=r"\.ping"))
-@ddk.on(events.NewMessage(incoming=True, pattern=r"\.ping"))
-async def ping(e):
+@idk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
+@ydk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
+@wdk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
+@hdk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
+@sdk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
+@adk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
+@bdk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
+@cdk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
+@edk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
+@ddk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
+async def ping(e):async def ping(e):
     if e.sender_id in SMEX_USERS:
         start = datetime.now()
         text = "Pong!"
