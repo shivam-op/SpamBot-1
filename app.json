@@ -73,7 +73,7 @@
         "required": true
       },
         "PING_MSG": {
-        "description": "Sudo Users Id",
+        "description": "A custom message for ping",
         "value": "",
         "required": true
       }
