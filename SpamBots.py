@@ -712,16 +712,16 @@ async def _(e):
             await e.reply(usage, parse_mode=None, link_preview=None)
 
 
-@idk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
-@ydk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
-@wdk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
-@hdk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
-@sdk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
-@adk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
-@bdk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
-@cdk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
-@edk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
-@ddk.on(events.NewMessage(incoming=True, pattern=r"{HD}ping"))
+@idk.on(events.NewMessage(incoming=True, pattern=r"\{HD} ping"))
+@ydk.on(events.NewMessage(incoming=True, pattern=r"\{HD} ping"))
+@wdk.on(events.NewMessage(incoming=True, pattern=r"\{HD} ping"))
+@hdk.on(events.NewMessage(incoming=True, pattern=r"\{HD} ping"))
+@sdk.on(events.NewMessage(incoming=True, pattern=r"\{HD} ping"))
+@adk.on(events.NewMessage(incoming=True, pattern=r"\{HD} ping"))
+@bdk.on(events.NewMessage(incoming=True, pattern=r"\{HD} ping"))
+@cdk.on(events.NewMessage(incoming=True, pattern=r"\{HD} ping"))
+@edk.on(events.NewMessage(incoming=True, pattern=r"\{HD} ping"))
+@ddk.on(events.NewMessage(incoming=True, pattern=r"\{HD} ping"))
 async def ping(e):
     if e.sender_id in SMEX_USERS:
         start = datetime.now()
