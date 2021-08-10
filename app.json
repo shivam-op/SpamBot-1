@@ -72,7 +72,7 @@
         "value": "",
         "required": true
       },
-        "PING_MSG": {
+        "PING_MESSAGE": {
         "description": "A custom message for ping",
         "value": "",
         "required": true
