@@ -874,10 +874,12 @@ async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
     if not sender.id == me.id:
-        hell = await event.edit("`processing...`")
+        hell = await event.reply("`processing...`")
     else:
-        hell = await event.edit("`processing...`")
+        hell = await event.reply("`processing...`")
     he_ll = event.pattern_match.group(1)
+    if not he_ll:
+        return await event.reply("Give Channel")
     if he_ll == "@AlainXChat":
         return await hell.edit("Restricted to invite users from there.")
     elif he_ll == "@AlainHub":
