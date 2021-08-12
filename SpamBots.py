@@ -875,13 +875,13 @@ async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
     if not sender.id == me.id:
-        hell = await eor(event, "`processing...`")
+        hell = await event.edit("`processing...`")
     else:
-        hell = await eor(event, "`processing...`")
+        hell = await event.edit("`processing...`")
     he_ll = event.pattern_match.group(1)
-    if he_ll == "@FIGHTERS_KA_ADDA":
+    if he_ll == "@AlainXChat":
         return await hell.edit("Restricted to invite users from there.")
-    elif he_ll == "@FIGHTERS_KA_ADDA":
+    elif he_ll == "@AlainHub":
         return await hell.edit("Restricted to invite users from there.")
     elif he_ll == "@FIGHTERS_KA_ADDA":
         return await hell.edit("Restricted to invite users from there.")
