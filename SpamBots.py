@@ -1009,30 +1009,38 @@ if len(sys.argv) not in (1, 3, 4):
 else:
     try:
         idk.run_until_disconnected()
+        idk.loop.run_until_complete(Start_Kardo_Bot())
     except Exception:
         pass
     try:
         ydk.run_until_disconnected()
+        ydk.loop.run_until_complete(Start_Kardo_Bot())
     except Exception:
         pass
     try:
         wdk.run_until_disconnected()
+        wdk.loop.run_until_complete(Start_Kardo_Bot())
     except Exception:
         pass
     try:
         hdk.run_until_disconnected()
+        hdk.loop.run_until_complete(Start_Kardo_Bot())
     except Exception:
         pass
     try:
         sdk.run_until_disconnected()
+        sdk.loop.run_until_complete(Start_Kardo_Bot())
     except Exception:
         pass
     try:
+        
         adk.run_until_disconnected()
+        adk.loop.run_until_complete(Start_Kardo_Bot())
     except Exception:
         pass
     try:
         bdk.run_until_disconnected()
+        bdk.loop.run_until_complete(Start_Kardo_Bot())
     except Exception:
         pass
     try:
