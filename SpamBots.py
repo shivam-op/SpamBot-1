@@ -985,7 +985,7 @@ from time import sleep
 @cdk.on(events.NewMessage(incoming=True, pattern=r"\.purge"))
 @edk.on(events.NewMessage(incoming=True, pattern=r"\.purge"))
 @ddk.on(events.NewMessage(incoming=True, pattern=r"\.purge"))
-async def alive(event):
+async def purge(event):
  if event.sender_id in SMEX_USERS:
    start = time.perf_counter()
    reply_msg = await event.get_reply_message()
@@ -1007,8 +1007,9 @@ async def alive(event):
    text = f"🗑 `Purged messages` `in {time_:0.2f} seconds`"
    hdgs = await event.respond(text, parse_mode='markdown')
    await event.delete()
-   sleep(3)
+   sleep(1)
    await hdgs.delete()
+   await event.delete()
 
 
 async def Start_Kardo_Bot():
