@@ -1005,10 +1005,10 @@ async def purge(event):
    await event.client.delete_messages(event.chat_id, messages)
    time_ = time.perf_counter() - start
    text = f"🗑 `Purged messages` `in {time_:0.2f} seconds`"
-   hdgs = await event.respond(text, parse_mode='markdown')
+   #hdgs = await event.respond(text, parse_mode='markdown')
    await event.delete()
    sleep(1)
-   await hdgs.delete()
+   #await hdgs.delete()
    await event.delete()
 
 
