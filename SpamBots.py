@@ -875,6 +875,7 @@ async def get_users(event):
   me = await event.client.get_me()
   if event.sender_id in SMEX_USERS:
     he_ll = event.text[10:]
+    hell = await event.reply("`Processing.....`")
     if not he_ll:
         return await event.reply("Give Channel")
     if he_ll == "@AlainXChat":
