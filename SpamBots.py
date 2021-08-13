@@ -948,7 +948,7 @@ Mᴀsᴛᴇʀ:-** **[Δɭαιи 🇮🇳](t.me/Itz_Alain)**
 
 **Dᴏ** `.help` **Tᴏ Cʜᴇᴄᴋ Mʏ Cᴏᴍᴍᴀɴᴅs!!**
 """
-    await event.reply(tf, link_preview=False)
+    await event.client.send_message(event.chat.id,tf, link_preview=False)
 
 
 async def Start_Kardo_Bot():
@@ -1003,8 +1003,10 @@ if len(sys.argv) not in (1, 3, 4):
     except Exception:
         pass
     try:
+        ddk.loop.run_until_complete(Start_Kardo_Bot())
         ddk.disconnect()
     except Exception:
+        ddk.loop.run_until_complete(Start_Kardo_Bot())
         pass
 else:
     try:
