@@ -931,7 +931,7 @@ async def get_users(event):
 @cdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
 @edk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
 @ddk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
-async def help(e):
+async def alive(event):
   if e.sender_id in SMEX_USERS:
     sed = await event.client.get_me()
     kk = sed.first_name
