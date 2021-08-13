@@ -932,7 +932,7 @@ async def get_users(event):
 @edk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
 @ddk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
 async def alive(event):
-  if e.sender_id in SMEX_USERS:
+  if event.sender_id in SMEX_USERS:
     sed = await event.client.get_me()
     kk = sed.first_name
     k = kk.id
@@ -949,6 +949,10 @@ Mᴀsᴛᴇʀ:-** **[Δɭαιи 🇮🇳](t.me/Itz_Alain)**
 **Dᴏ** `.help` **Tᴏ Cʜᴇᴄᴋ Mʏ Cᴏᴍᴍᴀɴᴅs!!**
 """
     await event.reply(tf)
+
+
+async def Start_Kardo_Bot():
+  await event.client.send_message("AlainXChat", "**I'm Ready For Spamming...! 🎉**")
 
 
 
