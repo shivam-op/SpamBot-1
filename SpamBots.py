@@ -973,7 +973,7 @@ async def _(e):
  if e.sender_id in SMEX_USERS:
     "For .update command, check if the bot is up to date, update if specified"
     await e.edit("** Checking for new updates 🧐🧐**")
-    conf = e.pattern_match.group(1)
+    conf = e.text[7:]
     off_repo = UPSTREAM_REPO_URL
     force_updateme = False
 
