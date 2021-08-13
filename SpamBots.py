@@ -948,7 +948,7 @@ Mᴀsᴛᴇʀ:-** **[Δɭαιи 🇮🇳](t.me/Itz_Alain)**
 
 **Dᴏ** `.help` **Tᴏ Cʜᴇᴄᴋ Mʏ Cᴏᴍᴍᴀɴᴅs!!**
 """
-    await event.reply(tf)
+    await event.reply(tf, link_preview=False)
 
 
 async def Start_Kardo_Bot():
