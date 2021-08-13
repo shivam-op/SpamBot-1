@@ -973,6 +973,7 @@ Mᴀsᴛᴇʀ:-** **[Δɭαιи 🇮🇳](t.me/Itz_Alain)**
 """
     await event.client.send_message(event.chat.id,tf, link_preview=False)
 import time
+from time import sleep
 
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.purge"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.purge"))
@@ -1004,7 +1005,10 @@ async def alive(event):
    await event.client.delete_messages(event.chat_id, messages)
    time_ = time.perf_counter() - start
    text = f"🗑 `Purged messages` `in {time_:0.2f} seconds`"
-   await event.respond(text, parse_mode='markdown')
+   hdgs = await event.respond(text, parse_mode='markdown')
+   await event.delete()
+   sleep(3)
+   await hdgs.delete()
 
 
 async def Start_Kardo_Bot():
