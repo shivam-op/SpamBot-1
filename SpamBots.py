@@ -825,7 +825,7 @@ UsᴇʀBᴏᴛ Cᴏᴍᴍᴀɴᴅs:**
 `.dreplyraid`
 
 """
-        await e.client.send_message(e.chat.id,text, parse_mode=markdown, link_preview=None)
+        await e.client.send_message(e.chat.id,text)
 
 
 # --------------------------------------------------------------------------------------------------------------------------------
