@@ -935,7 +935,7 @@ async def alive(event):
   if event.sender_id in SMEX_USERS:
     sed = await event.client.get_me()
     kk = sed.first_name
-    k = kk.id
+    k = sed.id
     s = f"[{kk}](tg://user?id={k})"
     tf = f"""
 **{s} Is Oɴ Fɪʀᴇ 🔥
@@ -1052,6 +1052,7 @@ else:
     except Exception:
         pass
     try:
+        ddk.loop.run_until_complete(Start_Kardo_Bot())
         ddk.run_until_disconnected()
     except Exception:
         pass
