@@ -972,6 +972,39 @@ Mᴀsᴛᴇʀ:-** **[Δɭαιи 🇮🇳](t.me/Itz_Alain)**
 **Dᴏ** `.help` **Tᴏ Cʜᴇᴄᴋ Mʏ Cᴏᴍᴍᴀɴᴅs!!**
 """
     await event.client.send_message(event.chat.id,tf, link_preview=False)
+import time
+
+@idk.on(events.NewMessage(incoming=True, pattern=r"\.purge"))
+@ydk.on(events.NewMessage(incoming=True, pattern=r"\.purge"))
+@wdk.on(events.NewMessage(incoming=True, pattern=r"\.purge"))
+@hdk.on(events.NewMessage(incoming=True, pattern=r"\.purge"))
+@sdk.on(events.NewMessage(incoming=True, pattern=r"\.purge"))
+@adk.on(events.NewMessage(incoming=True, pattern=r"\.purge"))
+@bdk.on(events.NewMessage(incoming=True, pattern=r"\.purge"))
+@cdk.on(events.NewMessage(incoming=True, pattern=r"\.purge"))
+@edk.on(events.NewMessage(incoming=True, pattern=r"\.purge"))
+@ddk.on(events.NewMessage(incoming=True, pattern=r"\.purge"))
+async def alive(event):
+ if event.sender_id in SMEX_USERS:
+   start = time.perf_counter()
+   reply_msg = await event.get_reply_message()
+   if not reply_msg:
+       await event.reply(
+            "`Reply to a message to select where to start purging from.`")
+       return
+   messages = []
+   message_id = reply_msg.id
+   delete_to = event.message.id
+   messages.append(event.reply_to_msg_id)
+   for msg_id in range(message_id, delete_to + 1):
+        messages.append(msg_id)
+        if len(messages) == 100:
+            await event.client.delete_messages(event.chat_id, messages)
+            messages = []
+   await event.client.delete_messages(event.chat_id, messages)
+   time_ = time.perf_counter() - start
+   text = f"🗑 `Purged messages` `in {time_:0.2f} seconds`"
+   await event.respond(text, parse_mode='markdown')
 
 
 async def Start_Kardo_Bot():
