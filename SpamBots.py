@@ -1012,6 +1012,31 @@ async def purge(event):
    await event.delete()
 
 
+#####################
+
+
+##################
+
+@idk.on(events.NewMessage(incoming=True, pattern=r"\.reply"))
+@ydk.on(events.NewMessage(incoming=True, pattern=r"\.reply"))
+@wdk.on(events.NewMessage(incoming=True, pattern=r"\.reply"))
+@hdk.on(events.NewMessage(incoming=True, pattern=r"\.reply"))
+@sdk.on(events.NewMessage(incoming=True, pattern=r"\.reply"))
+@adk.on(events.NewMessage(incoming=True, pattern=r"\.reply"))
+@bdk.on(events.NewMessage(incoming=True, pattern=r"\.reply"))
+@cdk.on(events.NewMessage(incoming=True, pattern=r"\.reply"))
+@edk.on(events.NewMessage(incoming=True, pattern=r"\.reply"))
+@ddk.on(events.NewMessage(incoming=True, pattern=r"\.reply"))
+async def purge(event):
+ if event.sender_id in SMEX_USERS:
+  sed = event.text[6:]
+   k = await event.get_reply_message()
+   if not k:
+     await event.reply("Reply Any User")
+     return
+   await k.reply(sed)
+
+
 async def Start_Kardo_Bot():
   await event.client.send_message("AlainXChat", "**I'm Ready For Spamming...! 🎉**")
 
