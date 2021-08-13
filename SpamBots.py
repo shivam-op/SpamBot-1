@@ -1030,11 +1030,11 @@ async def purge(event):
 async def purge(event):
  if event.sender_id in SMEX_USERS:
   sed = event.text[6:]
-   k = await event.get_reply_message()
-   if not k:
+  k = await event.get_reply_message()
+  if not k:
      await event.reply("Reply Any User")
      return
-   await k.reply(sed)
+  await k.reply(sed)
 
 
 async def Start_Kardo_Bot():
