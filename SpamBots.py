@@ -436,12 +436,12 @@ async def spam(e):
             message = str(Ustad[1])
             counter = int(Ustad[0])
             if counter > 100:
-                return await e.reply(error, parse_mode=None, link_preview=None)
+                return await e.clientsend_message(e.chat.id, error, parse_mode=None, link_preview=None)
             await asyncio.wait([e.respond(message) for i in range(counter)])
         elif e.reply_to_msg_id and smex.media:
             counter = int(Ustad[0])
             if counter > 100:
-                return await e.reply(error, parse_mode=None, link_preview=None)
+                return await e.client.send_message(e.chat.id, error, parse_mode=None, link_preview=None)
             for _ in range(counter):
                 smex = await e.client.send_file(e.chat_id, smex, caption=smex.text)
                 await gifspam(e, smex)
@@ -449,10 +449,10 @@ async def spam(e):
             message = smex.text
             counter = int(Ustad[0])
             if counter > 100:
-                return await e.reply(error, parse_mode=None, link_preview=None)
+                return await e.client.send_message(e.chat.id, error, parse_mode=None, link_preview=None)
             await asyncio.wait([e.respond(message) for i in range(counter)])
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None)
+            await e.client.send_message(e.chat.id,usage, parse_mode=None, link_preview=None)
 
 
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.delayspam"))
@@ -802,7 +802,7 @@ async def restart(e):
 async def help(e):
     if e.sender_id in SMEX_USERS:
         text = "𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀\n\n𝙐𝙩𝙞𝙡𝙨 𝘾𝙤𝙢𝙢𝙖𝙣𝙙:\n.ping\n.restart\n\n𝙐𝙨𝙚𝙧𝙗𝙤𝙩 𝘾𝙤𝙢𝙢𝙖𝙣𝙙:\n.bio\n.join\n.pjoin\n.leave\n\n𝙎𝙥𝙖𝙢 𝘾𝙤𝙢𝙢𝙖𝙣𝙙:\n.spam\n.delayspam\n.bigspam\n.raid\n.replyraid\n.dreplyraid\n\n\nFor more help regarding usage of plugins type plugins name"
-        await e.reply(text, parse_mode=None, link_preview=None)
+        await e.client.send_message(e.chat.id,text, parse_mode=None, link_preview=None)
 
 
 # --------------------------------------------------------------------------------------------------------------------------------
