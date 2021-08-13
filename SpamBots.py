@@ -877,7 +877,7 @@ async def get_users(event):
     he_ll = event.text[10:]
     hell = await event.reply("`Processing.....`")
     if not he_ll:
-        return await event.reply("Give Channel")
+        return await hell.edit("Give Channel")
     if he_ll == "@AlainXChat":
         return await hell.edit("Restricted to invite users from there.")
     elif he_ll == "@AlainHub":
@@ -913,7 +913,7 @@ async def get_users(event):
         f"**INVITING FINISHED** \n\n**Invited :**  `{s}` users \n**Failed :**  `{f}` users."
     )
   else:
-   return await event.reply("`Bsdk`")
+   return await event.reply("`Bsdk Chapal Phek Ke Maruga Agar Members Scrape Kiye To Lawde...`")
 
 
 
