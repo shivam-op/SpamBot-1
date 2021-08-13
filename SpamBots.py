@@ -873,10 +873,11 @@ def user_full_name(user):
 async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
-    if not sender.id == me.id:
+    if event.sender.id == SMEX_USERS:
         hell = await event.reply("`processing...`")
     else:
-        hell = await event.reply("`processing...`")
+        hell = await event.reply("`Bsdk`")
+        return
     he_ll = event.pattern_match.group(1)
     if not he_ll:
         return await event.reply("Give Channel")
