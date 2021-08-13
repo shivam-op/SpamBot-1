@@ -937,7 +937,7 @@ async def help(e):
       kk = sed.first_name
       k = kk.id
       s = f"[{kk}](tg://user?id={k})"
-      tf = """
+      tf = f"""
 **{s} Is Oɴ Fɪʀᴇ 🔥
 
 Hᴇʏᴀ D:) I Aᴍ Aʟɪᴠᴇ
