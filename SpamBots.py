@@ -932,12 +932,12 @@ async def get_users(event):
 @edk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
 @ddk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
 async def help(e):
-    if e.sender_id in SMEX_USERS:
-      sed = await event.client.get_me()
-      kk = sed.first_name
-      k = kk.id
-      s = f"[{kk}](tg://user?id={k})"
-      tf = f"""
+  if e.sender_id in SMEX_USERS:
+    sed = await event.client.get_me()
+    kk = sed.first_name
+    k = kk.id
+    s = f"[{kk}](tg://user?id={k})"
+    tf = f"""
 **{s} Is Oɴ Fɪʀᴇ 🔥
 
 Hᴇʏᴀ D:) I Aᴍ Aʟɪᴠᴇ
@@ -948,7 +948,7 @@ Mᴀsᴛᴇʀ:-** **[Δɭαιи 🇮🇳](t.me/Itz_Alain)**
 
 **Dᴏ** `.help` **Tᴏ Cʜᴇᴄᴋ Mʏ Cᴏᴍᴍᴀɴᴅs!!**
 """
-       await event.reply(tf)
+    await event.reply(tf)
 
 
 
