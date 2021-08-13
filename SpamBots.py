@@ -871,13 +871,9 @@ def user_full_name(user):
 @edk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
 @ddk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
 async def get_users(event):
-    sender = await event.get_sender()
-    me = await event.client.get_me()
-    if event.sender.id == SMEX_USERS:
-        hell = await event.reply("`processing...`")
-    else:
-        hell = await event.reply("`Bsdk`")
-        return
+  sender = await event.get_sender()
+  me = await event.client.get_me()
+  if event.sender_id in SMEX_USERS:
     he_ll = event.pattern_match.group(1)
     if not he_ll:
         return await event.reply("Give Channel")
@@ -915,6 +911,8 @@ async def get_users(event):
     return await hell.edit(
         f"**INVITING FINISHED** \n\n**Invited :**  `{s}` users \n**Failed :**  `{f}` users."
     )
+  else:
+   return await event.reply("`Bsdk`")
 
 
 
