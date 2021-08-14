@@ -90,7 +90,7 @@ async def start_Ustad():
             SMEX_USERS.append(botid)
         except Exception as e:
             idk = "smex"
-            print(e)
+            print(f"{e} for 1")
     else:
         print("Session 1 not Found")
         session_name = "startup"
@@ -111,7 +111,7 @@ async def start_Ustad():
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
-            print(e)
+            print(f"{e} for 2")
     else:
         print("Session 2 not Found")
         session_name = "startup"
@@ -132,7 +132,7 @@ async def start_Ustad():
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
-            print(e)
+            print(f"{e} for 3")
     else:
         print("Session 3 not Found")
         session_name = "startup"
@@ -153,7 +153,7 @@ async def start_Ustad():
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
-            print(e)
+            print(f"{e} for 4")
     else:
         print("Session 4 not Found")
         session_name = "startup"
@@ -174,7 +174,7 @@ async def start_Ustad():
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
-            print(e)
+            print(f"{e} for 5")
     else:
         print("Session 5 not Found")
         session_name = "startup"
@@ -195,7 +195,7 @@ async def start_Ustad():
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
-            print(e)
+            print(f"{e} for 6")
     else:
         print("Session 6 not Found")
         session_name = "startup"
@@ -216,7 +216,7 @@ async def start_Ustad():
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
-            print(e)
+            print(f"{e} for 7")
     else:
         print("Session 7 not Found")
         session_name = "startup"
@@ -237,7 +237,7 @@ async def start_Ustad():
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
-            print(e)
+            print(f"{e} for 8")
     else:
         print("Session 8 not Found")
         session_name = "startup"
@@ -258,7 +258,7 @@ async def start_Ustad():
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
-            print(e)
+            print(f"{e} for 9")
     else:
         print("Session 9 not Found")
         session_name = "startup"
@@ -279,7 +279,7 @@ async def start_Ustad():
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
-            print(e)
+            print(f"{e} for 10")
     else:
         print("Session 10 not Found")
         session_name = "startup"
