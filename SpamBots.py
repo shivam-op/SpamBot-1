@@ -841,7 +841,7 @@ from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.functions.messages import GetFullChatRequest
 
 async def get_chatinfo(event):
-    chat = event.text[10:]
+    chat = event.pattern_match.group(1)
     chat_info = None
     if chat:
         try:
@@ -861,18 +861,18 @@ async def get_chatinfo(event):
         try:
             chat_info = await event.client(GetFullChannelRequest(chat))
         except ChannelInvalidError:
-            await event.reply("`Invalid channel/group`")
+            await event.reply("Invalid channel/group")
             return None
         except ChannelPrivateError:
             await event.reply(
-                "`This is a private channel/group or I am banned from there`"
+                "This is a private channel/group or I am banned from there"
             )
             return None
         except ChannelPublicGroupNaError:
-            await event.reply("`Channel or supergroup doesn't exist`")
+            await event.reply("Channel or supergroup doesn't exist")
             return None
         except (TypeError, ValueError):
-            await event.reply("`Invalid channel/group`")
+            await event.reply("Invalid channel/group")
             return None
     return chat_info
 
@@ -894,50 +894,40 @@ def user_full_name(user):
 @edk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
 @ddk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
 async def get_users(event):
-  sender = await event.get_sender()
-  me = await event.client.get_me()
-  if event.sender_id in SMEX_USERS:
-    he_ll = event.text[10:]
-    hell = await event.reply("`BHAI ADD SURU HOGAYA`")
-    if not he_ll:
-        return await hell.edit("Give Channel")
-    if he_ll == "@AlainXChat":
-        return await hell.edit("Restricted to invite users from there.")
-    elif he_ll == "@AlainHub":
-        return await hell.edit("Restricted to invite users from there.")
-    elif he_ll == "@FIGHTERS_KA_ADDA":
-        return await hell.edit("Restricted to invite users from there.")
+    sender = await event.get_sender()
+    me = await event.client.get_me()
+    if not sender.id == me.id:
+        mafia = await edit_or_reply(event, "processing...")
+    else:
+        mafia = await edit_or_reply(event, "processing...")
     kraken = await get_chatinfo(event)
     chat = await event.get_chat()
     if event.is_private:
-        return await hell.edit("`Sorry, Cant add users here`")
+        return await mafia.edit("Sorry, Cant add users here")
     s = 0
     f = 0
     error = "None"
 
-    await hell.edit("**INVITING USERS !!**")
+    await mafia.edit("TerminalStatus\n\nCollecting Users.......")
     async for user in event.client.iter_participants(kraken.full_chat.id):
         try:
             if error.startswith("Too"):
-                return await hell.edit(
-                    f"**INVITING FINISHED !**\n\n**Error :** \n`{error}`\n\n**Invited :**  `{s}` users. \n**Failed to Invite :** `{f}` users."
+                return await mafia.edit(
+                    f"Terminal Finished With Error\n(May Got Limit Error from telethon Please try agin Later)\nError : \n{error}\n\n• Invited {s} people \n• Failed to Invite {f} people"
                 )
             await event.client(
                 functions.channels.InviteToChannelRequest(channel=chat, users=[user.id])
             )
             s = s + 1
-            await hell.edit(
-                f"**INVITING USERS.. **\n\n**Invited :**  `{s}` users \n**Failed to Invite :**  `{f}` users.\n\n**×Error :**  `{error}`"
+            await mafia.edit(
+                f"Terminal Running...\n\n• Invited {s} people \n• Failed to Invite {f} people\n\n× LastError: {error}"
             )
         except Exception as e:
             error = str(e)
             f = f + 1
-    return await hell.edit(
-        f"**INVITING FINISHED** \n\n**Invited :**  `{s}` users \n**Failed :**  `{f}` users."
+    return await mafia.edit(
+        f"Terminal Finished \n\n• Successfully Invited {s} people \n• failed to invite {f} people"
     )
-  else:
-   return await event.reply("`Bsdk Chapal Phek Ke Maruga Agar Members Scrape Kiye To Lawde...`")
-
 #################
 
 
