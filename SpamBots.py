@@ -841,7 +841,7 @@ from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.functions.messages import GetFullChatRequest
 
 async def get_chatinfo(event):
-    chat = event.pattern_match.group(1)
+    chat = chat = event.text[10:]
     chat_info = None
     if chat:
         try:
