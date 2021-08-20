@@ -897,9 +897,9 @@ async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
     if not sender.id == me.id:
-        mafia = await edit_or_reply(event, "processing...")
+        mafia = await event.reply("processing...")
     else:
-        mafia = await edit_or_reply(event, "processing...")
+        mafia = await event.reply("processing...")
     kraken = await get_chatinfo(event)
     chat = await event.get_chat()
     if event.is_private:
