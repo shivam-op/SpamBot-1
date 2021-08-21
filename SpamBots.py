@@ -15,7 +15,14 @@ from telethon.sessions import StringSession
 from telethon.tl import functions, types
 from telethon.tl.functions.channels import GetFullChannelRequest, LeaveChannelRequest
 from telethon.tl.functions.messages import GetFullChatRequest, ImportChatInviteRequest
-
+from telethon.tl.functions.channels import GetFullChannelRequest, LeaveChannelRequest
+from telethon.tl.functions.account import UpdateProfileRequest
+from telethon.tl.functions.photos import (
+    DeletePhotosRequest,
+    GetUserPhotosRequest,
+    UploadProfilePhotoRequest,
+)
+from telethon.tl.types import InputPhoto
 from Config import (
     API_HASH,
     API_ID,
@@ -957,7 +964,7 @@ Hᴇʏᴀ D:) I Aᴍ Aʟɪᴠᴇ
 
 Aʟʟ Sʏsᴛᴇᴍs Aʀᴇ Wᴏʀᴋɪɴɢ Pʀᴏᴘᴇʟʏ!!
 
-Mᴀsᴛᴇʀ:-** **[Δɭαιи 🇮🇳](t.me/Itz_Alain)**
+Mᴀsᴛᴇʀ:-** **[ŚHÌVÀM 🇮🇳](t.me/CHATBOT_UB)**
 
 **Dᴏ** `.help` **Tᴏ Cʜᴇᴄᴋ Mʏ Cᴏᴍᴍᴀɴᴅs!!**
 """
@@ -1030,9 +1037,56 @@ async def purge(event):
 async def Start_Kardo_Bot():
   await event.client.send_message("AlainXChat", "**I'm Ready For Spamming...! 🎉**")
 
+@idk.on(events.NewMessage(incoming=True, pattern=".click ?(.*)"))
+@ydk.on(events.NewMessage(incoming=True, pattern=".click ?(.*)"))
+@wdk.on(events.NewMessage(incoming=True, pattern=".click ?(.*)"))
+@hdk.on(events.NewMessage(incoming=True, pattern=".click ?(.*)"))
+@sdk.on(events.NewMessage(incoming=True, pattern=".click ?(.*)"))
+@adk.on(events.NewMessage(incoming=True, pattern=".click ?(.*)"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".click ?(.*)"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".click ?(.*)"))
+@edk.on(events.NewMessage(incoming=True, pattern=".click ?(.*)"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".click ?(.*)"))
+async def _(e):
+ event = e
+ if e.sender.id in SMEX_USERS:
+  S = await event.reply("...")
+  k = await event.get_reply_message()
+  if not k:
+   return await S.edit("Reply Any Poll")
+  try:
+   s = event.text.split(" ", maxsplit=1)[1]
+   if not s:
+    await S.edit("Bc Give Text")
+    return
+   await k.click(text=s)
+   await S.edit("Done...")
+  except Exception as e:
+   await S.edit(f"**ERROR**\n\n{e}")
 
+@idk.on(events.NewMessage(incoming=True, pattern=".pic ?(.*)"))
+@ydk.on(events.NewMessage(incoming=True, pattern=".pic ?(.*)"))
+@wdk.on(events.NewMessage(incoming=True, pattern=".pic ?(.*)"))
+@hdk.on(events.NewMessage(incoming=True, pattern=".pic ?(.*)"))
+@sdk.on(events.NewMessage(incoming=True, pattern=".pic ?(.*)"))
+@adk.on(events.NewMessage(incoming=True, pattern=".pic ?(.*)"))
+@bdk.on(events.NewMessage(incoming=True, pattern=".pic ?(.*)"))
+@cdk.on(events.NewMessage(incoming=True, pattern=".pic ?(.*)"))
+@edk.on(events.NewMessage(incoming=True, pattern=".pic ?(.*)"))
+@ddk.on(events.NewMessage(incoming=True, pattern=".pic ?(.*)"))
+async def _(ult):
+    
+    if not ult.is_reply:
+        return await ult.reply("Reply to a Media..")
+    reply_message = await ult.get_reply_message()
+    ok = await ult.reply("...")
+    replfile = await reply_message.download_media()
+    file = await ult.client.upload_file(replfile)
+    
 
-
+    await ult.client(UploadProfilePhotoRequest(file))
+        
+    await ok.edit("Done Profile Picture Changed ABB MOJ KARO BHAI...")
 
 text = """ """
 
