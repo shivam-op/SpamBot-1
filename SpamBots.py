@@ -846,7 +846,7 @@ from telethon.errors import (
 from telethon.tl import functions
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.functions.messages import GetFullChatRequest
-from config import (
+from Config import (
    ALIVE_MEDIA,
    ALIVE_TEXT,
 )
