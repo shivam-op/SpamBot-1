@@ -735,7 +735,7 @@ async def ping(e):
         event = await e.reply(text, parse_mode=None, link_preview=None)
         end = datetime.now()
         ms = (end - start).microseconds / 1000
-        await event.edit(f"🤖 𝗣𝗼𝗻𝗴!\n`{ms}` 𝗺𝘀\n {PM} ")
+        await event.edit(f"🤖 𝗣𝗼𝗻𝗴!\n`{ms}` 𝗺𝘀\n VIRUS ON FIRE 🔥 ")
 
 
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.restart"))
@@ -957,7 +957,7 @@ async def alive(event):
         try:
             await event.client.send_file(event.chat_id, ALIVE_MEDIA, caption = ALIVE_TEXT, reply_to=event.message.id, link_preview=None)
         except:
-            await e.reply(alive_temxt, link_preview=None)
+            await event.reply(ALIVE_TEXT, link_preview=None)
 
 
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.aliveop"))
