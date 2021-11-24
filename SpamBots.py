@@ -846,7 +846,10 @@ from telethon.errors import (
 from telethon.tl import functions
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.functions.messages import GetFullChatRequest
-
+from config import (
+   ALIVE_MEDIA,
+   ALIVE_TEXT,
+)
 async def get_chatinfo(event):
     chat = chat = event.text[10:]
     chat_info = None
@@ -890,16 +893,16 @@ def user_full_name(user):
     full_name = " ".join(names)
     return full_name
 
-@idk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
-@ydk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
-@wdk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
-@hdk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
-@sdk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
-@adk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
-@bdk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
-@cdk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
-@edk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
-@ddk.on(events.NewMessage(incoming=True, pattern=r"\.inviteall"))
+@idk.on(events.NewMessage(incoming=True, pattern=r"\.inviteallop"))
+@ydk.on(events.NewMessage(incoming=True, pattern=r"\.inviteallop"))
+@wdk.on(events.NewMessage(incoming=True, pattern=r"\.inviteallop"))
+@hdk.on(events.NewMessage(incoming=True, pattern=r"\.inviteallop"))
+@sdk.on(events.NewMessage(incoming=True, pattern=r"\.inviteallop"))
+@adk.on(events.NewMessage(incoming=True, pattern=r"\.inviteallop"))
+@bdk.on(events.NewMessage(incoming=True, pattern=r"\.inviteallop"))
+@cdk.on(events.NewMessage(incoming=True, pattern=r"\.inviteallop"))
+@edk.on(events.NewMessage(incoming=True, pattern=r"\.inviteallop"))
+@ddk.on(events.NewMessage(incoming=True, pattern=r"\.inviteallop"))
 async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
@@ -939,8 +942,6 @@ async def get_users(event):
 
 
 #################
-
-
 @idk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
 @ydk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
 @wdk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
@@ -952,6 +953,24 @@ async def get_users(event):
 @edk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
 @ddk.on(events.NewMessage(incoming=True, pattern=r"\.alive"))
 async def alive(event):
+    if event.sender_id in SMEX_USERS:
+        try:
+            await event.client.send_file(event.chat_id, ALIVE_MEDIA, caption = ALIVE_TEXT, reply_to=event.message.id, link_preview=None)
+        except:
+            await e.reply(alive_temxt, link_preview=None)
+
+
+@idk.on(events.NewMessage(incoming=True, pattern=r"\.aliveop"))
+@ydk.on(events.NewMessage(incoming=True, pattern=r"\.aliveop"))
+@wdk.on(events.NewMessage(incoming=True, pattern=r"\.aliveop"))
+@hdk.on(events.NewMessage(incoming=True, pattern=r"\.aliveop"))
+@sdk.on(events.NewMessage(incoming=True, pattern=r"\.aliveop"))
+@adk.on(events.NewMessage(incoming=True, pattern=r"\.aliveop"))
+@bdk.on(events.NewMessage(incoming=True, pattern=r"\.aliveop"))
+@cdk.on(events.NewMessage(incoming=True, pattern=r"\.aliveop"))
+@edk.on(events.NewMessage(incoming=True, pattern=r"\.aliveop"))
+@ddk.on(events.NewMessage(incoming=True, pattern=r"\.aliveop"))
+async def aliveop(event):
   if event.sender_id in SMEX_USERS:
     sed = await event.client.get_me()
     kk = sed.first_name
