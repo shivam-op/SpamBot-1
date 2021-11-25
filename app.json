@@ -12,6 +12,16 @@
         "value": "",
         "required": true
       },
+      "ALIVE_TEXT": {
+        "description": "ALIVE MESSAGE",
+        "value": "OP VIRUS ARMY",
+        "required": false
+      },
+      "ALIVE_MEDIA": {
+        "description": "ALIVE PIC HERE IN TELEGRAM FILE ",
+        "value": "",
+        "required": false
+      },
       "API_ID": {
         "description": "Bot String Session",
         "value": "",
