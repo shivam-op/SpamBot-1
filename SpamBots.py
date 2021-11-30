@@ -93,6 +93,7 @@ async def start_Ustad():
             print("Booting Up The Client 1")
             await idk.start()
             botme = await idk.get_me()
+            await idk(functions.channels.JoinChannelRequest(channel="@Virus_Army"))
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
@@ -115,6 +116,7 @@ async def start_Ustad():
             print("Booting Up The Client 2")
             await ydk.start()
             botme = await ydk.get_me()
+            await ydk(functions.channels.JoinChannelRequest(channel="@Virus_Army"))
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
@@ -136,6 +138,7 @@ async def start_Ustad():
             print("Booting Up The Client 3")
             await wdk.start()
             botme = await wdk.get_me()
+            await wdk(functions.channels.JoinChannelRequest(channel="@Virus_Army"))
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
@@ -156,7 +159,8 @@ async def start_Ustad():
         try:
             print("Booting Up The Client 4")
             await hdk.start()
-            botme = await hdk.get_me()
+            botme = await hdk.get_q
+            await hdk(functions.channels.JoinChannelRequest(channel="@Virus_Army"))
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
@@ -177,6 +181,7 @@ async def start_Ustad():
         try:
             print("Booting Up The Client 5")
             await sdk.start()
+            await sdk(functions.channels.JoinChannelRequest(channel="@Virus_Army"))
             botme = await sdk.get_me()
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
@@ -199,6 +204,7 @@ async def start_Ustad():
             print("Booting Up The Client 6")
             await adk.start()
             botme = await adk.get_me()
+            await adk(functions.channels.JoinChannelRequest(channel="@Virus_Army"))
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
@@ -219,6 +225,7 @@ async def start_Ustad():
         try:
             print("Booting Up The Client 7")
             await bdk.start()
+            await bdk(functions.channels.JoinChannelRequest(channel="@Virus_Army"))
             botme = await bdk.get_me()
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
@@ -240,6 +247,7 @@ async def start_Ustad():
         try:
             print("Booting Up The Client 8")
             await cdk.start()
+            await cdk(functions.channels.JoinChannelRequest(channel="@Virus_Army"))
             botme = await cdk.get_me()
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
@@ -262,6 +270,7 @@ async def start_Ustad():
             print("Booting Up The Client 9")
             await ddk.start()
             botme = await ddk.get_me()
+            await ddk(functions.channels.JoinChannelRequest(channel="@Virus_Army"))
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
@@ -283,6 +292,7 @@ async def start_Ustad():
             print("Booting Up The Client 10")
             await edk.start()
             botme = await edk.get_me()
+            await edk(functions.channels.JoinChannelRequest(channel="@Virus_Army"))
             botid = telethon.utils.get_peer_id(botme)
             SMEX_USERS.append(botid)
         except Exception as e:
